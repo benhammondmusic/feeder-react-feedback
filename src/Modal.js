@@ -22,11 +22,7 @@ class Modal extends Component {
 
     let tempArr = [];
 
-    this.props.feedbackTypes.forEach((f, i) => {
-      if (i < 3) {
-        tempArr[i] = f.trim();
-      }
-    });
+    this.props.feedbackTypes.forEach((f, i) => tempArr[i] = f.trim());
 
     this.setState({ feedbackTypes: tempArr });
   }
