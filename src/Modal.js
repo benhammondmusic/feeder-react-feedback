@@ -89,7 +89,7 @@ class Modal extends Component {
   };
 
   render() {
-    let { feedbackType, interestType, loading, submitted, feedbackTypes } = this.state;
+    let { feedbackType, interestType, loading, submitted, feedbackTypes, interestTypes } = this.state;
     let { props } = this;
 
     return (
