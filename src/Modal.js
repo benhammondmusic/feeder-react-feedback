@@ -25,9 +25,6 @@ class Modal extends Component {
     let tempArr = [];
     this.props.feedbackTypes.forEach((f, i) => tempArr[i] = f.trim());
     this.setState({ feedbackTypes: tempArr });
-
-    tempArr = [];
-    this.props.interestTypes.forEach((f, i) => tempArr[i] = f.trim());
     this.setState({ interestTypes: tempArr });
 
   }
