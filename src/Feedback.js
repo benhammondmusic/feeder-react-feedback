@@ -20,6 +20,7 @@ class Feedback extends Component {
           projectName={props.projectName}
           subProject={props.subProject}
           feedbackTypes={props.feedbackTypes}
+          interestTypes={props.interestTypes}
           projectId={props.projectId}
           primaryColor={props.primaryColor}
           textColor={props.textColor}

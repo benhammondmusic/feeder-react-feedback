@@ -10,22 +10,26 @@ class Modal extends Component {
   state = {
     feedbackEmail: this.props.emailDefaultValue,
     feedbackType: this.props.feedbackTypes[0],
-    feedbackType: this.props.feedbackTypes[0],
+    interestType: this.props.feedbackTypes[0],
     feedbackMsg: "",
     subProject: this.props.subProject,
     loading: false,
     submitted: false,
     feedbackTypes: ["general", "bug", "idea"],
+    interestTypes: ["generalx", "bugx", "ideax"],
   };
 
   componentDidMount() {
     this.mounted = true;
 
     let tempArr = [];
-
     this.props.feedbackTypes.forEach((f, i) => tempArr[i] = f.trim());
-
     this.setState({ feedbackTypes: tempArr });
+
+    let tempArr = [];
+    this.props.interestTypes.forEach((f, i) => tempArr[i] = f.trim());
+    this.setState({ interestTypes: tempArr });
+
   }
 
   componentWillUnmount() {
@@ -33,25 +37,25 @@ class Modal extends Component {
   }
 
   // Only relevant to demo/playground
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.emailDefaultValue !== this.props.emailDefaultValue) {
-      this.setState({ feedbackEmail: this.props.emailDefaultValue });
-    }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevProps.emailDefaultValue !== this.props.emailDefaultValue) {
+  //     this.setState({ feedbackEmail: this.props.emailDefaultValue });
+  //   }
 
-    if (prevProps.subProject !== this.props.subProject) {
-      this.setState({ subProject: this.props.subProject });
-    }
+  //   if (prevProps.subProject !== this.props.subProject) {
+  //     this.setState({ subProject: this.props.subProject });
+  //   }
 
-    if (prevProps.feedbackTypes !== this.props.feedbackTypes) {
-      this.setState({ feedbackType: this.props.feedbackTypes[0] });
-      let tempArr = [];
-      let { feedbackTypes } = this.props;
+  //   if (prevProps.feedbackTypes !== this.props.feedbackTypes) {
+  //     this.setState({ feedbackType: this.props.feedbackTypes[0] });
+  //     let tempArr = [];
+  //     let { feedbackTypes } = this.props;
 
-      feedbackTypes.forEach((f, i) =>  tempArr[i] = f.trim());
+  //     feedbackTypes.forEach((f, i) =>  tempArr[i] = f.trim());
 
-      this.setState({ feedbackTypes: tempArr });
-    }
-  }
+  //     this.setState({ feedbackTypes: tempArr });
+  //   }
+  // }
 
   capitalize = (str) => {
     return str.replace(/(?:^|\s|["'([{])+\S/g, (match) => match.toUpperCase());
