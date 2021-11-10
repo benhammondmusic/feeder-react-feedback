@@ -10,6 +10,7 @@ class Modal extends Component {
   state = {
     feedbackEmail: this.props.emailDefaultValue,
     feedbackType: this.props.feedbackTypes[0],
+    feedbackType: this.props.feedbackTypes[0],
     feedbackMsg: "",
     subProject: this.props.subProject,
     loading: false,
@@ -149,7 +150,7 @@ class Modal extends Component {
             )}
 
             <div className="frf-modal-input-group">
-              <div className="frf-modal-label">Your Field of Interest *</div>
+            <div className="frf-modal-label">What Brings You to the Health Equity Tracker? *</div>
               <div className="frf-modal-feedback-types">
                 {this.state.feedbackTypes.map((f, i) => (
                   <span
@@ -158,7 +159,45 @@ class Modal extends Component {
                         ? "frf-modal-feedback-type frf-modal-feedback-selected"
                         : "frf-modal-feedback-type"
                     }
-                    key={`${i}feedbackType2`}
+                    key={`${i}why`}
+                    style={
+                      feedbackType === feedbackTypes[i]
+                        ? {
+                            background: props.primaryColor,
+                            color: props.textColor,
+                            border: `1px solid ${props.hoverBorderColor}`,
+                            boxShadow: `${props.hoverBorderColor} 0px 0px 0px 1px`,
+                            ":hover": {
+                              border: `1px solid ${props.hoverBorderColor}`,
+                              boxShadow: `${props.hoverBorderColor} 0px 0px 0px 1px`,
+                            },
+                          }
+                        : {
+                            color: "#000",
+                            ":hover": {
+                              border: `1px solid ${props.hoverBorderColor}`,
+                              boxShadow: `${props.hoverBorderColor} 0px 0px 0px 1px`,
+                            },
+                          }
+                    }
+                    onClick={() =>
+                      this.setState({ feedbackType: feedbackTypes[i] })
+                    }
+                  >
+                    {this.capitalize(feedbackTypes[i])}
+                  </span>
+                ))}
+              </div>
+              <div className="frf-modal-label">What Is Your Field of Interest? *</div>
+              <div className="frf-modal-feedback-types">
+                {this.state.feedbackTypes.map((f, i) => (
+                  <span
+                    className={
+                      feedbackType === feedbackTypes[i]
+                        ? "frf-modal-feedback-type frf-modal-feedback-selected"
+                        : "frf-modal-feedback-type"
+                    }
+                    key={`${i}field`}
                     style={
                       feedbackType === feedbackTypes[i]
                         ? {
@@ -259,16 +298,7 @@ class Modal extends Component {
                 <span>{props.submitButtonMsg}</span>
               )}
             </button>
-            <div className="frf-water">
-              Feedback Powered by{" "}
-              <a
-                href="http://feeder.sh/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Feeder.sh
-              </a>
-            </div>
+            
           </div>
         </form>
       </StyleRoot>
