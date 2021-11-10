@@ -19,9 +19,6 @@ class Trigger extends Component {
     let { modal } = this.state;
     let { props } = this;
 
-    console.log(props, "in trigger");
-
-
     return (
       <React.Fragment>
         <div

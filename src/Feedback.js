@@ -7,7 +7,6 @@ import Trigger from "./Trigger";
 class Feedback extends Component {
   render() {
     let { props } = this;
-    console.log(props, "in feedback");
 
     return (
       <div
