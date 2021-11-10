@@ -62,8 +62,7 @@ class Modal extends Component {
       feedbackEmail,
       feedbackType,
       feedbackMsg: 
-      `Field: ${interestType}
-      Message: ${feedbackMsg}`,
+      `Field: ${interestType}\nMessage: ${feedbackMsg}`,
       subProject,
       feedbackSrc:
         typeof window !== "undefined" ? window.location.pathname : null,
