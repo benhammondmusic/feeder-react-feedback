@@ -81,8 +81,10 @@ textarea {
   font-weight: 500;
 
   &::placeholder {
-    color: $lightGray;
-    font-weight: 500;
+    color: #5f6368;
+    font-weight: 100;
+    font-size: small;
+    font-style: italic;
   }
 }
 
