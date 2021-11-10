@@ -57,6 +57,9 @@ class Modal extends Component {
     let { feedbackEmail, feedbackType, interestType, feedbackMsg, subProject } = this.state;
     let { projectId } = this.props;
 
+    console.log(this.props, "in modal");
+
+
     let payload = {
       projectId,
       feedbackEmail,
