@@ -158,7 +158,7 @@ class Modal extends Component {
                         ? "frf-modal-feedback-type frf-modal-feedback-selected"
                         : "frf-modal-feedback-type"
                     }
-                    key={i + 2}
+                    key={`${i}feedbackType`}
                     style={
                       feedbackType === feedbackTypes[i]
                         ? {
