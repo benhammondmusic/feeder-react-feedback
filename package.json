@@ -1,6 +1,6 @@
 {
   "name": "@benhammondmusic/feeder-react-feedback",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Embeddable Feedback React component hooked up to an admin dashboard. The fastest way to start collecting feedback across your React projects! ⚡",
   "license": "MIT",
   "author": "Rishi Prasad <rishipr@umich.edu>",
