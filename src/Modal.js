@@ -9,27 +9,22 @@ let Textarea = Radium(TextareaAutosize);
 class Modal extends Component {
   state = {
     feedbackEmail: this.props.emailDefaultValue,
-    userType: this.props.userTypes[0],
-    reasonType: this.props.reasonTypes[0],
+    feedbackType: this.props.feedbackTypes[0],
     feedbackMsg: "",
     subProject: this.props.subProject,
     loading: false,
     submitted: false,
-    userTypes: ["1", "2", "3"],
-    reasonTypes: ["a", "b", "c"],
+    feedbackTypes: ["general", "bug", "idea"],
   };
 
   componentDidMount() {
     this.mounted = true;
 
-    let tempUserArr = [];
-    let tempReasonArr = [];
+    let tempArr = [];
 
-    this.props.userTypes.forEach((f, i) => tempUserArr[i] = f.trim());
-    this.props.reasonTypes.forEach((f, i) => tempReasonArr[i] = f.trim());
+    this.props.feedbackTypes.forEach((f, i) => tempArr[i] = f.trim());
 
-    this.setState({ userTypes: tempUserArr });
-    this.setState({ reasonTypes: tempReasonArr });
+    this.setState({ feedbackTypes: tempArr });
   }
 
   componentWillUnmount() {
@@ -46,14 +41,14 @@ class Modal extends Component {
       this.setState({ subProject: this.props.subProject });
     }
 
-    if (prevProps.userTypes !== this.props.userTypes) {
-      this.setState({ userType: this.props.userTypes[0] });
+    if (prevProps.feedbackTypes !== this.props.feedbackTypes) {
+      this.setState({ feedbackType: this.props.feedbackTypes[0] });
       let tempArr = [];
-      let { userTypes } = this.props;
+      let { feedbackTypes } = this.props;
 
-      userTypes.forEach((f, i) =>  tempArr[i] = f.trim());
+      feedbackTypes.forEach((f, i) =>  tempArr[i] = f.trim());
 
-      this.setState({ userTypes: tempArr });
+      this.setState({ feedbackTypes: tempArr });
     }
   }
 
@@ -75,14 +70,13 @@ class Modal extends Component {
 
     this.setState({ loading: true });
 
-    let { feedbackEmail, userType, reasonType, feedbackMsg, subProject } = this.state;
+    let { feedbackEmail, feedbackType, feedbackMsg, subProject } = this.state;
     let { projectId } = this.props;
 
     let payload = {
       projectId,
       feedbackEmail,
-      userType,
-      reasonType,
+      feedbackType,
       feedbackMsg,
       subProject,
       feedbackSrc:
@@ -110,7 +104,7 @@ class Modal extends Component {
   };
 
   render() {
-    let { userType, reasonType, loading, submitted, userTypes, reasonTypes } = this.state;
+    let { feedbackType, loading, submitted, feedbackTypes } = this.state;
     let { props } = this;
 
     return (
@@ -155,18 +149,18 @@ class Modal extends Component {
             )}
 
             <div className="frf-modal-input-group">
-              <div className="frf-modal-label">Feedback Type *</div>
+              <div className="frf-modal-label">Your Field of Interest *</div>
               <div className="frf-modal-feedback-types">
-                {this.state.userTypes.map((f, i) => (
+                {this.state.feedbackTypes.map((f, i) => (
                   <span
                     className={
-                      userType === userTypes[i]
+                      feedbackType === feedbackTypes[i]
                         ? "frf-modal-feedback-type frf-modal-feedback-selected"
                         : "frf-modal-feedback-type"
                     }
-                    key={`${i}userType2`}
+                    key={`${i}feedbackType2`}
                     style={
-                      userType === userTypes[i]
+                      feedbackType === feedbackTypes[i]
                         ? {
                             background: props.primaryColor,
                             color: props.textColor,
@@ -186,10 +180,10 @@ class Modal extends Component {
                           }
                     }
                     onClick={() =>
-                      this.setState({ userType: userTypes[i] })
+                      this.setState({ feedbackType: feedbackTypes[i] })
                     }
                   >
-                    {this.capitalize(userTypes[i])}
+                    {this.capitalize(feedbackTypes[i])}
                   </span>
                 ))}
               </div>
