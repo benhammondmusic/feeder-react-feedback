@@ -10,7 +10,7 @@ class Modal extends Component {
   state = {
     feedbackEmail: this.props.emailDefaultValue,
     feedbackType: this.props.feedbackTypes[0],
-    interestType: this.props.feedbackTypes[0],
+    interestType: this.props.interestTypes[0],
     feedbackMsg: "",
     subProject: this.props.subProject,
     loading: false,
@@ -25,7 +25,10 @@ class Modal extends Component {
     let tempArr = [];
     this.props.feedbackTypes.forEach((f, i) => tempArr[i] = f.trim());
     this.setState({ feedbackTypes: tempArr });
-    this.setState({ interestTypes: tempArr });
+
+    let tempArr2 = [];
+    this.props.interestTypes.forEach((f, i) => tempArr2[i] = f.trim());
+    this.setState({ interestTypes: tempArr2 });
 
   }
 
@@ -51,13 +54,14 @@ class Modal extends Component {
 
     this.setState({ loading: true });
 
-    let { feedbackEmail, feedbackType, feedbackMsg, subProject } = this.state;
+    let { feedbackEmail, feedbackType, interestType, feedbackMsg, subProject } = this.state;
     let { projectId } = this.props;
 
     let payload = {
       projectId,
       feedbackEmail,
       feedbackType,
+      interestType,
       feedbackMsg,
       subProject,
       feedbackSrc:
@@ -85,7 +89,7 @@ class Modal extends Component {
   };
 
   render() {
-    let { feedbackType, loading, submitted, feedbackTypes } = this.state;
+    let { feedbackType, interestType, loading, submitted, feedbackTypes } = this.state;
     let { props } = this;
 
     return (
