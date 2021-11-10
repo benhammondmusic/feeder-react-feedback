@@ -9,22 +9,27 @@ let Textarea = Radium(TextareaAutosize);
 class Modal extends Component {
   state = {
     feedbackEmail: this.props.emailDefaultValue,
-    feedbackType: this.props.feedbackTypes[0],
+    userType: this.props.userTypes[0],
+    reasonType: this.props.reasonTypes[0],
     feedbackMsg: "",
     subProject: this.props.subProject,
     loading: false,
     submitted: false,
-    feedbackTypes: ["general", "bug", "idea"],
+    userTypes: ["1", "2", "3"],
+    reasonTypes: ["a", "b", "c"],
   };
 
   componentDidMount() {
     this.mounted = true;
 
-    let tempArr = [];
+    let tempUserArr = [];
+    let tempReasonArr = [];
 
-    this.props.feedbackTypes.forEach((f, i) => tempArr[i] = f.trim());
+    this.props.userTypes.forEach((f, i) => tempUserArr[i] = f.trim());
+    this.props.reasonTypes.forEach((f, i) => tempReasonArr[i] = f.trim());
 
-    this.setState({ feedbackTypes: tempArr });
+    this.setState({ userTypes: tempUserArr });
+    this.setState({ reasonTypes: tempReasonArr });
   }
 
   componentWillUnmount() {
@@ -41,14 +46,14 @@ class Modal extends Component {
       this.setState({ subProject: this.props.subProject });
     }
 
-    if (prevProps.feedbackTypes !== this.props.feedbackTypes) {
-      this.setState({ feedbackType: this.props.feedbackTypes[0] });
+    if (prevProps.userTypes !== this.props.userTypes) {
+      this.setState({ userType: this.props.userTypes[0] });
       let tempArr = [];
-      let { feedbackTypes } = this.props;
+      let { userTypes } = this.props;
 
-      feedbackTypes.forEach((f, i) =>  tempArr[i] = f.trim());
+      userTypes.forEach((f, i) =>  tempArr[i] = f.trim());
 
-      this.setState({ feedbackTypes: tempArr });
+      this.setState({ userTypes: tempArr });
     }
   }
 
@@ -70,13 +75,13 @@ class Modal extends Component {
 
     this.setState({ loading: true });
 
-    let { feedbackEmail, feedbackType, feedbackMsg, subProject } = this.state;
+    let { feedbackEmail, userType, feedbackMsg, subProject } = this.state;
     let { projectId } = this.props;
 
     let payload = {
       projectId,
       feedbackEmail,
-      feedbackType,
+      userType,
       feedbackMsg,
       subProject,
       feedbackSrc:
@@ -104,7 +109,7 @@ class Modal extends Component {
   };
 
   render() {
-    let { feedbackType, loading, submitted, feedbackTypes } = this.state;
+    let { userType, loading, submitted, userTypes } = this.state;
     let { props } = this;
 
     return (
@@ -151,16 +156,16 @@ class Modal extends Component {
             <div className="frf-modal-input-group">
               <div className="frf-modal-label">Feedback Type *</div>
               <div className="frf-modal-feedback-types">
-                {this.state.feedbackTypes.map((f, i) => (
+                {this.state.userTypes.map((f, i) => (
                   <span
                     className={
-                      feedbackType === feedbackTypes[i]
+                      userType === userTypes[i]
                         ? "frf-modal-feedback-type frf-modal-feedback-selected"
                         : "frf-modal-feedback-type"
                     }
-                    key={`${i}feedbackType`}
+                    key={`${i}userType2`}
                     style={
-                      feedbackType === feedbackTypes[i]
+                      userType === userTypes[i]
                         ? {
                             background: props.primaryColor,
                             color: props.textColor,
@@ -180,10 +185,10 @@ class Modal extends Component {
                           }
                     }
                     onClick={() =>
-                      this.setState({ feedbackType: feedbackTypes[i] })
+                      this.setState({ userType: userTypes[i] })
                     }
                   >
-                    {this.capitalize(feedbackTypes[i])}
+                    {this.capitalize(userTypes[i])}
                   </span>
                 ))}
               </div>
@@ -191,7 +196,7 @@ class Modal extends Component {
 
             <div className="frf-modal-input-group">
               <div className="frf-modal-label" htmlFor="feedbackMsg">
-                Feedback Message ***
+                Did You Get What You Needed Today? *
               </div>
               <Style
                 key="5"

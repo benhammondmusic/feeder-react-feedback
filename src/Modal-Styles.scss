@@ -89,6 +89,7 @@ textarea {
 .frf-modal-feedback-types {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-bottom: 12px;
 
@@ -99,7 +100,7 @@ textarea {
     align-items: center;
     font-weight: 500;
     overflow-wrap: anywhere;
-    max-width: 100/3;
+    // max-width: 100/3;
 
     padding: 12px;
     text-align: center;
@@ -107,11 +108,11 @@ textarea {
     cursor: pointer;
 
     &:first-of-type {
-      border-radius: 4px 0px 0px 4px;
+      border-radius: 4px  4px 0px 0px;
     }
 
     &:last-of-type {
-      border-radius: 0px 4px 4px 0px;
+      border-radius: 0px 0px 4px 4px;
     }
   }
 }
