@@ -75,13 +75,14 @@ class Modal extends Component {
 
     this.setState({ loading: true });
 
-    let { feedbackEmail, userType, feedbackMsg, subProject } = this.state;
+    let { feedbackEmail, userType, reasonType, feedbackMsg, subProject } = this.state;
     let { projectId } = this.props;
 
     let payload = {
       projectId,
       feedbackEmail,
       userType,
+      reasonType,
       feedbackMsg,
       subProject,
       feedbackSrc:
@@ -109,7 +110,7 @@ class Modal extends Component {
   };
 
   render() {
-    let { userType, loading, submitted, userTypes } = this.state;
+    let { userType, reasonType, loading, submitted, userTypes, reasonTypes } = this.state;
     let { props } = this;
 
     return (
