@@ -48,6 +48,7 @@ Feedback.propTypes = {
   subProject: PropTypes.string,
   zIndex: PropTypes.string,
   feedbackTypes: PropTypes.arrayOf(PropTypes.string),
+  interestTypes: PropTypes.arrayOf(PropTypes.string),
 };
 
 Feedback.defaultProps = {
@@ -62,6 +63,7 @@ Feedback.defaultProps = {
   postSubmitButtonMsg: "Thanks!",
   submitButtonMsg: "Send Feedback",
   feedbackTypes: ["general", "bug", "idea"],
+  interestTypes: ["generalx", "bugx", "ideax"],
   zIndex: "100000000",
 };
 
