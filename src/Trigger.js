@@ -57,6 +57,7 @@ class Trigger extends Component {
                 projectName={props.projectName}
                 projectId={props.projectId}
                 feedbackTypes={props.feedbackTypes}
+                interestTypes={props.interestTypes}
                 primaryColor={props.primaryColor}
                 textColor={props.textColor}
                 hoverBorderColor={props.hoverBorderColor}

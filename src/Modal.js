@@ -33,27 +33,6 @@ class Modal extends Component {
     this.mounted = false;
   }
 
-  // Only relevant to demo/playground
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevProps.emailDefaultValue !== this.props.emailDefaultValue) {
-  //     this.setState({ feedbackEmail: this.props.emailDefaultValue });
-  //   }
-
-  //   if (prevProps.subProject !== this.props.subProject) {
-  //     this.setState({ subProject: this.props.subProject });
-  //   }
-
-  //   if (prevProps.feedbackTypes !== this.props.feedbackTypes) {
-  //     this.setState({ feedbackType: this.props.feedbackTypes[0] });
-  //     let tempArr = [];
-  //     let { feedbackTypes } = this.props;
-
-  //     feedbackTypes.forEach((f, i) =>  tempArr[i] = f.trim());
-
-  //     this.setState({ feedbackTypes: tempArr });
-  //   }
-  // }
-
   capitalize = (str) => {
     return str.replace(/(?:^|\s|["'([{])+\S/g, (match) => match.toUpperCase());
   };
@@ -117,7 +96,7 @@ class Modal extends Component {
           onSubmit={this.handleSubmit}
         >
           <div className="frf-modal-content-container">
-            {props.email && (
+            {/* {props.email && (
               <div className="frf-modal-input-group">
                 <div className="frf-modal-label" htmlFor="feedbackEmail">
                   Email{props.emailRequired ? " *" : null}
@@ -148,7 +127,7 @@ class Modal extends Component {
                   placeholder={"Enter your email"}
                 />
               </div>
-            )}
+            )} */}
 
             <div className="frf-modal-input-group">
             <div className="frf-modal-label">What Brings You to the Health Equity Tracker? *</div>
@@ -191,16 +170,16 @@ class Modal extends Component {
               </div>
               <div className="frf-modal-label">What Is Your Field of Interest? *</div>
               <div className="frf-modal-feedback-types">
-                {this.state.feedbackTypes.map((f, i) => (
+                {this.state.interestTypes.map((f, i) => (
                   <span
                     className={
-                      feedbackType === feedbackTypes[i]
+                      interestType === interestTypes[i]
                         ? "frf-modal-feedback-type frf-modal-feedback-selected"
                         : "frf-modal-feedback-type"
                     }
                     key={`${i}field`}
                     style={
-                      feedbackType === feedbackTypes[i]
+                      interestType === interestTypes[i]
                         ? {
                             background: props.primaryColor,
                             color: props.textColor,
@@ -220,10 +199,10 @@ class Modal extends Component {
                           }
                     }
                     onClick={() =>
-                      this.setState({ feedbackType: feedbackTypes[i] })
+                      this.setState({ interestType: interestTypes[i] })
                     }
                   >
-                    {this.capitalize(feedbackTypes[i])}
+                    {this.capitalize(interestTypes[i])}
                   </span>
                 ))}
               </div>
