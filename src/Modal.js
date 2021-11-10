@@ -151,6 +151,7 @@ class Modal extends Component {
             <div className="frf-modal-input-group">
               <div className="frf-modal-label">Feedback Type *</div>
               <div className="frf-modal-feedback-types">
+                {console.log(this.state.feedbackTypes)}
                 {this.state.feedbackTypes.map((f, i) => (
                   <span
                     className={
