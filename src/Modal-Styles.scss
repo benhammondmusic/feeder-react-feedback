@@ -57,11 +57,11 @@
 }
 
 .frf-modal-label {
-  color: $lightGray;
+  color: #5f6368;
+  font-weight: 100;
+  font-size: small;
   padding-bottom: 8px;
-  font-size: 14px;
   display: inline-block;
-  font-weight: 500;
 }
 
 textarea {
@@ -99,6 +99,7 @@ textarea {
     justify-content: center;
     align-items: center;
     font-weight: 500;
+    font-size: 0.8rem;
     overflow-wrap: anywhere;
     padding: 12px;
     text-align: center;
@@ -136,6 +137,7 @@ textarea {
 }
 
 .frf-water {
+  display: none;
   text-align: center;
   margin-top: 24px;
   color: $lightGray;
