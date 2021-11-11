@@ -18,7 +18,7 @@
   @media only screen and (min-width: 600px) {
     max-width: 500px;
   }
-  width: 90%;
+  width: 80%;
   max-height: 80vh;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -127,7 +127,6 @@ textarea {
   outline: 0;
   border-radius: 4px;
   border: 1px solid rgba($lightGray, 0.15);
-  margin-top: 16px;
   cursor: pointer;
   width: 100%;
   font-weight: 500;
