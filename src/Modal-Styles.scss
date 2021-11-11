@@ -59,10 +59,10 @@
 .frf-modal-label {
   color: #5f6368;
   font-weight: 500;
-  font-size: .8rem;
   padding-bottom: 8px;
   padding-top: 8px;
-  @media only screen and (max-width: 600px) {
+  font-size: .8rem;
+  @media only screen and (min-width: 600px) {
     font-size: 1.2rem;
   }
   display: inline-block;
@@ -105,10 +105,10 @@ textarea {
     justify-content: center;
     align-items: center;
     font-weight: 300;
-    font-size: 0.8rem;
     overflow-wrap: anywhere;
     padding: 2px;
-    @media only screen and (max-width: 600px) {
+    font-size: 0.8rem;
+    @media only screen and (min-width: 600px) {
       padding: 8px;
       font-size: 1rem;
     }
