@@ -14,8 +14,11 @@
   bottom: 98px;
   background: $white;
   @include shadow;
-  max-width: 380px;
-  width: 80%;
+  max-width: 350px;
+  @media only screen and (min-width: 800px) {
+    max-width: 500px;
+  }
+  width: 90%;
   max-height: 80vh;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
