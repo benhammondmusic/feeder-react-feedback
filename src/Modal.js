@@ -245,11 +245,11 @@ class Modal extends Component {
                     boxShadow: `${props.hoverBorderColor} 0px 0px 0px 1px`,
                   },
                 }}
-                placeholder={`Let us know how we could improve${
+                placeholder={`Let us know how we can improve${
                   props.subProject
-                    ? ` for ${props.subProject}`
+                    ? ` ${props.subProject}`
                     : props.projectName
-                    ? ` for ${props.projectName}`
+                    ? ` ${props.projectName}`
                     : ""
                 }`}
               />
