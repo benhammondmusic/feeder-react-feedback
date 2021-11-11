@@ -11,12 +11,12 @@
   text-align: left;
   position: absolute;
   right: 12px;
-  bottom: 108px;
+  bottom: 98px;
   background: $white;
   @include shadow;
   max-width: 380px;
   width: 80%;
-  max-height: 90vh;
+  max-height: 80vh;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   overflow: scroll;
