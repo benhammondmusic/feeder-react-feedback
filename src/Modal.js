@@ -83,7 +83,7 @@ class Modal extends Component {
           if (this.mounted) {
             this.props.triggerModal();
           }
-        }, 5000);
+        }, 3000); // time to post-submit message before reverting
       }
     }, 1000);
   };
