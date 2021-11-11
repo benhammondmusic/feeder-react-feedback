@@ -83,7 +83,7 @@ class Modal extends Component {
           if (this.mounted) {
             this.props.triggerModal();
           }
-        }, 1000);
+        }, 5000);
       }
     }, 1000);
   };
