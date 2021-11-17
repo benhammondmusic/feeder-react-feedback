@@ -15,8 +15,8 @@ class Modal extends Component {
     subProject: this.props.subProject,
     loading: false,
     submitted: false,
-    feedbackTypes: [],
-    interestTypes: [],
+    feedbackTypes: ["",""],
+    interestTypes: ["",""],
   };
 
   componentDidMount() {
@@ -134,7 +134,7 @@ class Modal extends Component {
             )}
 
             <div className="frf-modal-input-group">
-            <div className="frf-modal-label">What brings you to the health equity tracker? *</div>
+            <div className="frf-modal-label">{props.feedbackPrompt} *</div>
               <div className="frf-modal-feedback-types">
                 {this.state.feedbackTypes.map((f, i) => (
                   <span
@@ -172,7 +172,7 @@ class Modal extends Component {
                   </span>
                 ))}
               </div>
-              <div className="frf-modal-label">What is field are you in? *</div>
+              <div className="frf-modal-label">{props.interestPrompt} *</div>
               <div className="frf-modal-feedback-types">
                 {this.state.interestTypes.map((f, i) => (
                   <span
