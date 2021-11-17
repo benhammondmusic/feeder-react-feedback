@@ -15,8 +15,8 @@ class Modal extends Component {
     subProject: this.props.subProject,
     loading: false,
     submitted: false,
-    feedbackTypes: ["general", "bug", "idea"],
-    interestTypes: ["generalx", "bugx", "ideax"],
+    feedbackTypes: [],
+    interestTypes: [],
   };
 
   componentDidMount() {
@@ -100,7 +100,7 @@ class Modal extends Component {
           onSubmit={this.handleSubmit}
         >
           <div className="frf-modal-content-container">
-            {/* {props.email && (
+            {props.email && (
               <div className="frf-modal-input-group">
                 <div className="frf-modal-label" htmlFor="feedbackEmail">
                   Email{props.emailRequired ? " *" : null}
@@ -131,10 +131,10 @@ class Modal extends Component {
                   placeholder={"Enter your email"}
                 />
               </div>
-            )} */}
+            )}
 
             <div className="frf-modal-input-group">
-            <div className="frf-modal-label">What Brings You to the Health Equity Tracker? *</div>
+            <div className="frf-modal-label">What brings you to the health equity tracker? *</div>
               <div className="frf-modal-feedback-types">
                 {this.state.feedbackTypes.map((f, i) => (
                   <span
@@ -172,7 +172,7 @@ class Modal extends Component {
                   </span>
                 ))}
               </div>
-              <div className="frf-modal-label">What Is Your Field of Interest? *</div>
+              <div className="frf-modal-label">What is field are you in? *</div>
               <div className="frf-modal-feedback-types">
                 {this.state.interestTypes.map((f, i) => (
                   <span
@@ -214,7 +214,7 @@ class Modal extends Component {
 
             <div className="frf-modal-input-group">
               <div className="frf-modal-label" htmlFor="feedbackMsg">
-                Did You Get What You Needed Today? *
+                Did you get what you needed today? *
               </div>
               <Style
                 key="5"

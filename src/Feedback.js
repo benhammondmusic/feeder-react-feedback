@@ -62,8 +62,8 @@ Feedback.defaultProps = {
   hoverBorderColor: "#000000",
   postSubmitButtonMsg: "Thanks!",
   submitButtonMsg: "Send Feedback",
-  feedbackTypes: ["general", "bug", "idea"],
-  interestTypes: ["generalx", "bugx", "ideax"],
+  feedbackTypes: [],
+  interestTypes: [],
   zIndex: "100000000",
 };
 
