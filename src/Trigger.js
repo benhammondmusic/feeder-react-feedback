@@ -60,6 +60,7 @@ class Trigger extends Component {
                 feedbackPrompt={props.feedbackPrompt}
                 interestTypes={props.interestTypes}
                 interestPrompt={props.interestPrompt}
+                textboxPrompt={props.textboxPrompt}
                 primaryColor={props.primaryColor}
                 textColor={props.textColor}
                 hoverBorderColor={props.hoverBorderColor}

@@ -23,6 +23,7 @@ class Feedback extends Component {
           feedbackTypes={props.feedbackTypes}
           interestPrompt={props.interestPrompt}
           interestTypes={props.interestTypes}
+          textboxPrompt={props.textboxPrompt}
           projectId={props.projectId}
           primaryColor={props.primaryColor}
           textColor={props.textColor}
@@ -53,6 +54,7 @@ Feedback.propTypes = {
   feedbackTypes: PropTypes.arrayOf(PropTypes.string),
   interestPrompt: PropTypes.string,
   interestTypes: PropTypes.arrayOf(PropTypes.string),
+  textboxPrompt: PropTypes.string
 };
 
 Feedback.defaultProps = {
@@ -66,6 +68,7 @@ Feedback.defaultProps = {
   hoverBorderColor: "#000000",
   postSubmitButtonMsg: "Thanks!",
   submitButtonMsg: "Send Feedback",
+  textboxPrompt: "",
   feedbackPrompt: "",
   feedbackTypes: ["",""],
   interestPrompt: "",

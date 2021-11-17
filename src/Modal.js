@@ -214,7 +214,7 @@ class Modal extends Component {
 
             <div className="frf-modal-input-group">
               <div className="frf-modal-label" htmlFor="feedbackMsg">
-                Did you get what you needed today? *
+                {props.textboxPrompt}
               </div>
               <Style
                 key="5"
