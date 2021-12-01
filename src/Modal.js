@@ -40,10 +40,6 @@ class Modal extends Component {
     return str.replace(/(?:^|\s|["'([{])+\S/g, (match) => match.toUpperCase());
   };
 
-  handleBlur = (e) => {
-    this.props.triggerModal();
-  }
-
   handleChange = (e) => {
     this.setState({ [e.target.id]: e.target.value });
   };
@@ -103,7 +99,7 @@ class Modal extends Component {
           style={{ zIndex: parseInt(props.zIndex) }}
           onSubmit={this.handleSubmit}
         >
-          <div className="frf-modal-content-container" onBlur={this.handleBlur}>
+          <div className="frf-modal-content-container">
             {props.email && (
               <div className="frf-modal-input-group">
                 <div className="frf-modal-label" htmlFor="feedbackEmail">
