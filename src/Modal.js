@@ -102,9 +102,8 @@ class Modal extends Component {
           className="frf-modal-container"
           style={{ zIndex: parseInt(props.zIndex) }}
           onSubmit={this.handleSubmit}
-          onBlur={this.handleBlur}
         >
-          <div className="frf-modal-content-container">
+          <div className="frf-modal-content-container" onBlur={this.handleBlur}>
             {props.email && (
               <div className="frf-modal-input-group">
                 <div className="frf-modal-label" htmlFor="feedbackEmail">
