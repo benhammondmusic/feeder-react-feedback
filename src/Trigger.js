@@ -13,7 +13,6 @@ class Trigger extends Component {
 
   triggerModal = () => {
     this.setState({ modal: !this.state.modal });
-    console.log("modal triggered");
   };
 
   render() {
