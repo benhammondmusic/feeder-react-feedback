@@ -113,7 +113,7 @@ class Modal extends Component {
                   id="feedbackEmail"
                   name="feedbackEmail"
                   type="email"
-                  key="1"
+                  key="frf-modal-input"
                   style={{
                     ":hover": {
                       border: `1px solid ${props.hoverBorderColor}`,
@@ -143,7 +143,7 @@ class Modal extends Component {
                         ? "frf-modal-feedback-type frf-modal-feedback-selected"
                         : "frf-modal-feedback-type"
                     }
-                    key={`${i}why`}
+                    key={`frf-feedback-type-${i}`}
                     style={
                       feedbackType === feedbackTypes[i]
                         ? {
@@ -181,7 +181,7 @@ class Modal extends Component {
                         ? "frf-modal-feedback-type frf-modal-feedback-selected"
                         : "frf-modal-feedback-type"
                     }
-                    key={`${i}field`}
+                    key={`frf-interest-type-${i}`}
                     style={
                       interestType === interestTypes[i]
                         ? {
@@ -217,7 +217,7 @@ class Modal extends Component {
                 {props.textboxPrompt}
               </div>
               <Style
-                key="5"
+                key="frf-style-component"
                 scopeSelector="textarea"
                 rules={{
                   ":hover": {
@@ -227,7 +227,7 @@ class Modal extends Component {
                 }}
               />
               <Textarea
-                key="6"
+                key="frf-modal-input"
                 className="frf-modal-input"
                 onChange={this.handleChange}
                 value={this.state.feedbackMsg}
@@ -257,7 +257,7 @@ class Modal extends Component {
             <button
               className="frf-modal-button"
               disabled={submitted}
-              key="7"
+              key="frf-modal-button"
               style={{
                 background: props.primaryColor,
                 color: props.textColor,
@@ -270,7 +270,7 @@ class Modal extends Component {
             >
               {loading ? (
                 <div
-                  key="8"
+                  key="frf-modal-button-loader"
                   style={{
                     borderTop: `2.133px solid ${props.textColor}`,
                   }}
